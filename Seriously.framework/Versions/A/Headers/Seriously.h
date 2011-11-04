@@ -25,6 +25,8 @@
 + (SeriouslyOperation *)put:(id)url options:(NSDictionary *)userOptions handler:(SeriouslyHandler)handler;
 + (SeriouslyOperation *)delete:(id)url handler:(SeriouslyHandler)handler;
 + (SeriouslyOperation *)delete:(id)url options:(NSDictionary *)userOptions handler:(SeriouslyHandler)handler;
++ (SeriouslyOperation *)head:(id)url handler:(SeriouslyHandler)handler;
++ (SeriouslyOperation *)head:(id)url options:(NSDictionary *)options handler:(SeriouslyHandler)handler;
 
 // Utility Methods
 // ---------------
