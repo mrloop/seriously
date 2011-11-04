@@ -123,6 +123,17 @@ const NSString *kSeriouslyProgressHandler = @"kSeriouslyProgressHandler";
     return [self requestURL:url options:options handler:handler];
 }
 
++ (SeriouslyOperation *)head:(id)url handler:(SeriouslyHandler)handler {
+  return [self get:url options:nil handler:handler];
+}
+
++ (SeriouslyOperation *)head:(id)url options:(NSDictionary *)userOptions handler:(SeriouslyHandler)handler {
+  NSMutableDictionary *options = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"HEAD", kSeriouslyMethod, nil];
+  [options addEntriesFromDictionary:userOptions];    
+  return [self requestURL:url options:options handler:handler];
+}
+
+
 // Utility Methods
 // ---------------
 + (NSURL *)url:(id)url params:(id)params {
